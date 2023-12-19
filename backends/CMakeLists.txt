@@ -59,7 +59,7 @@ endif()
 
 option(IMGUI_BACKEND_METAL "Enable the Metal backend" OFF)
 if(IMGUI_BACKEND_METAL)
-	add_library(imgui_backend_metal MODULE imgui_impl_metal.mm)
+	add_library(imgui_backend_metal imgui_impl_metal.mm)
 	target_include_directories(imgui_backend_metal PUBLIC .)
 	target_link_libraries(imgui_backend_metal PUBLIC imgui PRIVATE "-framework Metal -framework MetalKit -framework Cocoa -framework IOKit -framework CoreVideo -framework QuartzCore")
 	set_target_properties(imgui_backend_metal PROPERTIES
